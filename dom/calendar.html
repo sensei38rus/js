@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календарь</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .today {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .other-month {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="month-year"></h2>
+    <table id="calendar">
+        <thead>
+            <tr>
+                <th>Пн</th>
+                <th>Вт</th>
+                <th>Ср</th>
+                <th>Чт</th>
+                <th>Пт</th>
+                <th>Сб</th>
+                <th>Вс</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+    </table>
+
+    <script>
+    
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth();
+        const today = now.getDate();
+        
+        const monthNames = [
+            'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+        ];
+        document.getElementById('month-year').textContent = `${monthNames[month]} ${year}`;
+        
+        
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        
+     
+        let firstDayOfWeek = firstDay.getDay();
+       
+        if (firstDayOfWeek === 0) firstDayOfWeek = 6;
+        else firstDayOfWeek -= 1;
+        
+    
+        const calendarBody = document.getElementById('calendar-body');
+        let date = 1;
+        
+        for (let i = 0; i < 6; i++) {
+            const row = document.createElement('tr');
+            
+            for (let j = 0; j < 7; j++) {
+                const cell = document.createElement('td');
+                
+                if ((i === 0 && j < firstDayOfWeek) || date > daysInMonth) {
+                    cell.textContent = '';
+                } else {
+                    cell.textContent = date;
+                    if (date === today) {
+                        cell.classList.add('today');
+                    }
+                    date++;
+                }
+                
+                row.appendChild(cell);
+            }
+            
+            calendarBody.appendChild(row);
+            if (date > daysInMonth) break;
+        }
+    </script>
+</body>
+</html>
