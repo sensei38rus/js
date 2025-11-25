@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор визиток</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card-preview">
+            <h2>Предпросмотр визитки</h2>
+            <div class="card" id="business-card">
+                <div class="card-header">
+                    <div class="logo" id="logo">ЛОГО</div>
+                    <div class="company-name" id="company-name">Название компании</div>
+                </div>
+                <div class="card-body">
+                    <div class="name" id="person-name">Иванов Иван Иванович</div>
+                    <div class="position" id="person-position">Менеджер по продажам</div>
+                    <div class="contact-info">
+                        <div id="phone">+7 (999) 123-45-67</div>
+                        <div id="email">ivanov@company.com</div>
+                        <div id="website">www.company.com</div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="address" id="address">г. Москва, ул. Примерная, д. 1</div>
+                </div>
+            </div>
+            <button class="download-btn" id="download-btn">Скачать визитку</button>
+        </div>
+        
+        <div class="controls">
+            <h2>Настройки визитки</h2>
+            
+            <div class="control-group">
+                <h3>Личная информация</h3>
+                <div class="input-group">
+                    <label for="name-input">ФИО</label>
+                    <input type="text" id="name-input" value="Иванов Иван Иванович">
+                </div>
+                <div class="input-group">
+                    <label for="position-input">Должность</label>
+                    <input type="text" id="position-input" value="Менеджер по продажам">
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>Контактная информация</h3>
+                <div class="input-group">
+                    <label for="phone-input">Телефон</label>
+                    <input type="text" id="phone-input" value="+7 (999) 123-45-67">
+                </div>
+                <div class="input-group">
+                    <label for="email-input">Email</label>
+                    <input type="text" id="email-input" value="ivanov@company.com">
+                </div>
+                <div class="input-group">
+                    <label for="website-input">Веб-сайт</label>
+                    <input type="text" id="website-input" value="www.company.com">
+                </div>
+                <div class="input-group">
+                    <label for="address-input">Адрес</label>
+                    <input type="text" id="address-input" value="г. Москва, ул. Примерная, д. 1">
+                    <div class="input-hint">Длинный адрес будет автоматически обрезан с добавлением многоточия</div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>Информация о компании</h3>
+                <div class="input-group">
+                    <label for="company-input">Название компании</label>
+                    <input type="text" id="company-input" value="Название компании">
+                </div>
+                <div class="input-group">
+                    <label for="logo-input">Текст логотипа</label>
+                    <input type="text" id="logo-input" value="ЛОГО">
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>Цвета визитки</h3>
+                <div class="input-group">
+                    <label>Цвет фона логотипа</label>
+                    <div class="color-picker">
+                        <div class="color-option active" style="background-color: #4a6fa5;" data-color="#4a6fa5"></div>
+                        <div class="color-option" style="background-color: #2c5530;" data-color="#2c5530"></div>
+                        <div class="color-option" style="background-color: #8b4513;" data-color="#8b4513"></div>
+                        <div class="color-option" style="background-color: #6a0dad;" data-color="#6a0dad"></div>
+                        <div class="color-option" style="background-color: #b22222;" data-color="#b22222"></div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Цвета текста</label>
+                    <div class="text-color-controls">
+                        <div class="text-color-item">
+                            <span class="text-color-label">Имя</span>
+                            <input type="color" id="name-color" value="#333333" class="text-color-preview">
+                        </div>
+                        <div class="text-color-item">
+                            <span class="text-color-label">Должность</span>
+                            <input type="color" id="position-color" value="#666666" class="text-color-preview">
+                        </div>
+                        <div class="text-color-item">
+                            <span class="text-color-label">Контакты</span>
+                            <input type="color" id="contact-color" value="#555555" class="text-color-preview">
+                        </div>
+                        <div class="text-color-item">
+                            <span class="text-color-label">Название компании</span>
+                            <input type="color" id="company-color" value="#333333" class="text-color-preview">
+                        </div>
+                        <div class="text-color-item">
+                            <span class="text-color-label">Адрес</span>
+                            <input type="color" id="address-color" value="#777777" class="text-color-preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
