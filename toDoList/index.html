@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Левая панель со списком задач -->
+        <div class="tasks-panel">
+            <header>
+                <h1>Мои задачи</h1>
+                <button class="btn-create" id="createTaskBtn">
+                    <i class="fas fa-plus"></i> Создать
+                </button>
+            </header>
+            
+            <ul class="tasks-list" id="tasksList">
+                <!-- Задачи будут добавляться сюда динамически -->
+            </ul>
+        </div>
+        
+        <!-- Правая панель с карточкой задачи -->
+        <div class="task-card-panel">
+            <div class="task-card" id="taskCard">
+                <div class="card-header">
+                    <h2 class="card-title" id="cardTitle">Новая задача</h2>
+                    <button class="btn-close" id="closeCardBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="taskTitle">Название задачи</label>
+                        <input type="text" id="taskTitle" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskDescription">Описание</label>
+                        <textarea id="taskDescription" placeholder="Добавьте описание задачи..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskPriority">Приоритет</label>
+                        <select id="taskPriority">
+                            <option value="low">Низкий</option>
+                            <option value="medium">Средний</option>
+                            <option value="high">Высокий</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="taskDate">Срок выполнения</label>
+                        <input type="date" id="taskDate">
+                    </div>
+                    
+                    <button type="submit" class="btn-save">Сохранить задачу</button>
+                    <button type="button" class="btn-cancel" id="cancelBtn">Отмена</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
