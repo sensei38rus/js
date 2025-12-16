@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра "Сапёр"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Сапёр</h1>
+            <p>Поле 12×12 клеток, 20 мин</p>
+        </header>
+        
+        <div class="game-info">
+            <div class="mines-count">
+                <div>Мины</div>
+                <span id="mines-counter">20</span>
+            </div>
+            <div class="timer">
+                <div>Время</div>
+                <span id="timer">0</span>
+            </div>
+        </div>
+        
+        <div class="game-board" id="game-board"></div>
+        
+        <div class="controls">
+            <div class="controls-info">
+                <div class="control-group">
+                    <h3>Управление мышью</h3>
+                    <p>ЛКМ - открыть клетку</p>
+                    <p>ПКМ - поставить флажок</p>
+                </div>
+                <div class="control-group">
+                    <h3>Управление клавиатурой</h3>
+                    <p>Стрелки - перемещение</p>
+                    <p>Пробел - открыть клетку</p>
+                    <p>Ctrl+D - поставить флажок</p>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button id="new-game">Новая игра</button>
+                <button id="hint">Подсказка</button>
+            </div>
+        </div>
+        
+        <div class="event-log">
+            <h3>Журнал событий</h3>
+            <div id="event-log-content"></div>
+        </div>
+    </div>
+    
+    <div class="message" id="message"></div>
+    
+    <footer>
+        <p>Игра "Сапёр". Используйте мышь или клавиатуру для управления.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
