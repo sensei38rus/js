@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пазл - Сборка изображения</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Игра "Пазл"</h1>
+            <p class="subtitle">Соберите изображение из фрагментов, перетаскивая их на игровое поле</p>
+        </header>
+        
+        <div class="game-info">
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value" id="moves">0</div>
+                    <div class="stat-label">Ходов</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="time">00:00</div>
+                    <div class="stat-label">Время</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value" id="placed">0/54</div>
+                    <div class="stat-label">Собрано</div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="hintBtn" class="btn-primary">Подсказка</button>
+                <button id="shuffleBtn" class="btn-warning">Перемешать</button>
+                <button id="resetBtn" class="btn-danger">Начать заново</button>
+                <button id="solveBtn" class="btn-success">Показать решение</button>
+            </div>
+        </div>
+        
+        <div class="game-container">
+            <div class="game-board" id="gameBoard"></div>
+            <div class="tiles-container" id="tilesContainer"></div>
+        </div>
+        
+        <div class="image-selector">
+            <h3>Выберите изображение для сборки:</h3>
+            <div class="image-options" id="imageOptions">
+                <!-- Изображения будут добавлены через JavaScript -->
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    <div class="win-message" id="winMessage">
+        <div class="win-content">
+            <h2>Поздравляем!</h2>
+            <p>Вы успешно собрали пазл!</p>
+            <div class="win-stats">
+                <div>
+                    <div class="stat-value" id="finalMoves">0</div>
+                    <div class="stat-label">Ходов</div>
+                </div>
+                <div>
+                    <div class="stat-value" id="finalTime">00:00</div>
+                    <div class="stat-label">Время</div>
+                </div>
+            </div>
+            <button id="playAgainBtn" class="btn-success">Играть еще раз</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
